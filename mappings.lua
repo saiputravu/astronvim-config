@@ -35,8 +35,27 @@ return {
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
     ["<leader>fs"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
     ["<leader>s"] = { name = "Searching" },
-    ["<leader>ss"] = { ":Telescope current_buffer_fuzzy_find<cr>", desc = "Fuzzy find current buffer" },
-    ["<leader>sj"] = { ":Telescope jumplist<cr>", desc = "Jumplist" },
+    -- ["<leader>ss"] = { ":Telescope current_buffer_fuzzy_find<cr>", desc = "Fuzzy find current buffer" },
+    -- ["<leader>sj"] = { ":Telescope jumplist<cr>", desc = "Jumplist" },
+    ["<leader>;"] = { 
+      function() require("Comment.api").toggle.linewise.count(vim.v.count > 0 and vim.v.count or 1) end,
+      desc = "Toggle comment",
+    },
+    ["<C-c><C-t>"] = {
+      function() 
+        vim.lsp.buf.hover()
+      end,
+      desc = "Get type information LSP",
+    },
+    [","] = { name = "LSP Shortcuts" },
+    [",h"] = { name = "LSP Help" },
+    [",ht"] = {  
+      function() 
+        vim.lsp.buf.hover()
+      end,
+      desc = "Get type information LSP",
+    },
+    ["<leader>w"] = { "<C-w>", desc = "Window management mode" }
     
   },
   t = {
@@ -44,5 +63,19 @@ return {
     -- ["<esc>"] = false,
     ["fd"] = { "<C-\\><C-n>" },
     ["jj"] = { "<C-\\><C-n>" },
+  },
+  i = {
+    ["<C-c><C-t>"] = {
+      function() 
+        vim.lsp.buf.hover()
+      end,
+      desc = "Get type information LSP",
+    },
+  },
+  v = {
+    ["<leader>;"] = {
+      "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>",
+      desc = "Toggle comment for selection"
+    },
   },
 }
