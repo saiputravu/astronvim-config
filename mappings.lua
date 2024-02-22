@@ -55,8 +55,22 @@ return {
       end,
       desc = "Get type information LSP",
     },
-    ["<leader>w"] = { "<C-w>", desc = "Window management mode" }
+    ["<leader>w"] = { "<C-w>", desc = "Window management mode" },
+    [","] = { name = "LSP Shortcuts" },
+    [",h"] = { name = "LSP Help" },
+    [",ht"] = {  
+      function() 
+        vim.lsp.buf.hover()
+      end,
+      desc = "Get type information LSP",
+    },
+    ["<leader>w"] = { "<C-w>", desc = "Window management mode" },
     
+    ["<leader>m"] = { name = "Tab Shortcuts" },
+    ["<leader>mc"] = { ":tabnew<cr>", desc = "Tab new" },
+    ["<leader>mn"] = { ":tabnext<cr>", desc = "Tab next" },
+    ["<leader>mp"] = { ":tabprevious<cr>", desc = "Tab prev" },
+    ["<leader>ml"] = { ":tabs<cr>", desc = "Tab list" }
   },
   t = {
     -- setting a mapping to false will disable it

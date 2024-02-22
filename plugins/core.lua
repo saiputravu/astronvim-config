@@ -1,5 +1,5 @@
 return {
-  { "lukas-reineke/indent-blankline.nvim", enabled = false, },
+  { "lukas-reineke/indent-blankline.nvim", tag = "v2.20.8"},
   -- customize alpha options
   {
     "max397574/better-escape.nvim",
