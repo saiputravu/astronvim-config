@@ -11,4 +11,6 @@ return {
   -- import/override with your plugins folder
   { import = "astrocommunity.git.neogit" },
   { import = "astrocommunity.git.octo-nvim" },
+  { import = "astrocommunity.git.blame-nvim" },
+  { import = "astrocommunity.motion.leap-nvim" },
 }
