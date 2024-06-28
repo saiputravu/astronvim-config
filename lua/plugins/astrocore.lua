@@ -62,7 +62,7 @@ return {
 
         ["fd"] = { "<esc>" },
         -- quick save
-        ["<Leader>fs"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+        ["<Leader>fs"] = { ":w!<cr>", desc = "Save File" }, -- change description but the same command
         ["<Leader>s"] = { name = "Searching" },
         -- ["<Leader>ss"] = { ":Telescope current_buffer_fuzzy_find<cr>", desc = "Fuzzy find current buffer" },
         -- ["<Leader>sj"] = { ":Telescope jumplist<cr>", desc = "Jumplist" },
@@ -71,17 +71,13 @@ return {
           desc = "Toggle comment",
         },
         ["<C-c><C-t>"] = {
-          function()
-            vim.lsp.buf.hover()
-          end,
+          function() vim.lsp.buf.hover() end,
           desc = "Get type information LSP",
         },
         [","] = { name = "LSP Shortcuts" },
         [",h"] = { name = "LSP Help" },
         [",ht"] = {
-          function()
-            vim.lsp.buf.hover()
-          end,
+          function() vim.lsp.buf.hover() end,
           desc = "Get type information LSP",
         },
         ["<Leader>w"] = { "<C-w>", desc = "Window management mode" },
@@ -89,7 +85,12 @@ return {
         ["<Leader>mc"] = { ":tabnew<cr>", desc = "Tab new" },
         ["<Leader>mn"] = { ":tabnext<cr>", desc = "Tab next" },
         ["<Leader>mp"] = { ":tabprevious<cr>", desc = "Tab prev" },
-        ["<Leader>ml"] = { ":tabs<cr>", desc = "Tab list" }
+        ["<Leader>ml"] = { ":tabs<cr>", desc = "Tab list" },
+
+        -- neogit
+        [",g"] = { name = "Neogit Shortcuts" },
+        [",gl"] = { ":Neogit log<cr>", desc = "Neogit log" },
+        [",gb"] = { ":Neogit branch<cr>", desc = "Neogit branch" },
       },
       t = {
         -- setting a mapping to false will disable it
@@ -99,16 +100,14 @@ return {
       },
       i = {
         ["<C-c><C-t>"] = {
-          function()
-            vim.lsp.buf.hover()
-          end,
+          function() vim.lsp.buf.hover() end,
           desc = "Get type information LSP",
         },
       },
       v = {
         ["<Leader>;"] = {
           "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>",
-          desc = "Toggle comment for selection"
+          desc = "Toggle comment for selection",
         },
       },
     },
