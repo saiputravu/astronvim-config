@@ -1,4 +1,4 @@
--- 
+--
 -- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 -- You can also add or configure plugins by creating files in this `plugins/` folder
@@ -6,6 +6,8 @@
 
 ---@type LazySpec
 return {
+
+  "andrewradev/linediff.vim",
 
   -- == Examples of Adding Plugins ==
 
@@ -22,10 +24,10 @@ return {
     event = "InsertCharPre",
     opts = {
       timeout = 300,
-      mapping = {'jj','jk', 'fd'},
+      mapping = { "jj", "jk", "fd" },
     },
     enabled = true,
-    lazy = false
+    lazy = false,
   },
 
   -- customize alpha options
@@ -95,14 +97,14 @@ return {
       )
     end,
   },
-   
+
   {
     "ellisonleao/gruvbox.nvim",
     priority = 1000,
     config = true,
     lazy = false,
     opts = function(plugin, opts)
-      require("gruvbox").setup({
+      require("gruvbox").setup {
         terminal_colors = true, -- add neovim terminal colors
         undercurl = true,
         underline = true,
@@ -125,7 +127,7 @@ return {
         overrides = {},
         dim_inactive = false,
         transparent_mode = false,
-      })
+      }
     end,
   },
 }

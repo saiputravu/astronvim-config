@@ -13,4 +13,5 @@ return {
   { import = "astrocommunity.git.octo-nvim" },
   { import = "astrocommunity.git.blame-nvim" },
   { import = "astrocommunity.motion.leap-nvim" },
+  { import = "astrocommunity.pack.cpp" },
 }

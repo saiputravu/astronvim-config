@@ -32,6 +32,7 @@ return {
         spell = false, -- sets vim.opt.spell
         signcolumn = "yes", -- sets vim.opt.signcolumn to yes
         wrap = true, -- sets vim.opt.wrap
+        scrolloff = 50, -- sets vim.opt.scrolloff
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)
@@ -74,15 +75,20 @@ return {
           function() vim.lsp.buf.hover() end,
           desc = "Get type information LSP",
         },
-        [","] = { name = "LSP Shortcuts" },
+        [","] = { name = "Extra Shortcuts" },
+
+        -- Lsp
         [",h"] = { name = "LSP Help" },
         [",ht"] = {
           function() vim.lsp.buf.hover() end,
           desc = "Get type information LSP",
         },
+
+        -- Tabs
         ["<Leader>w"] = { "<C-w>", desc = "Window management mode" },
         ["<Leader>m"] = { name = "Tab Shortcuts" },
-        ["<Leader>mc"] = { ":tabnew<cr>", desc = "Tab new" },
+        ["<Leader>mc"] = { ":tabclose<cr>", desc = "Tab close" },
+        ["<Leader>mm"] = { ":tabnew<cr>", desc = "Tab new" },
         ["<Leader>mn"] = { ":tabnext<cr>", desc = "Tab next" },
         ["<Leader>mp"] = { ":tabprevious<cr>", desc = "Tab prev" },
         ["<Leader>ml"] = { ":tabs<cr>", desc = "Tab list" },
@@ -91,6 +97,33 @@ return {
         [",g"] = { name = "Neogit Shortcuts" },
         [",gl"] = { ":Neogit log<cr>", desc = "Neogit log" },
         [",gb"] = { ":Neogit branch<cr>", desc = "Neogit branch" },
+
+        -- Linediff
+        [",b"] = { name = "Linediff" },
+        [",bb"] = { ":Linediff<cr>", desc = "Linediff" },
+        [",bl"] = { ":LinediffLast<cr>", desc = "Linediff last" },
+
+        -- General
+        [",c"] = {
+          function()
+            if vim.wo.colorcolumn == "" then
+              vim.wo.colorcolumn = "81"
+            else
+              vim.wo.colorcolumn = ""
+            end
+          end,
+          desc = "Toggle column marker for 81",
+        },
+        [",,c"] = {
+          function()
+            if vim.wo.colorcolumn == "" then
+              vim.wo.colorcolumn = "72"
+            else
+              vim.wo.colorcolumn = ""
+            end
+          end,
+          desc = "Toggle column marker for 72",
+        },
       },
       t = {
         -- setting a mapping to false will disable it
@@ -109,6 +142,10 @@ return {
           "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>",
           desc = "Toggle comment for selection",
         },
+        -- Linediff
+        [",b"] = { name = "Linediff" },
+        [",bb"] = { ":Linediff<cr>", desc = "Linediff" },
+        [",bl"] = { ":LinediffLast<cr>", desc = "Linediff last" },
       },
     },
   },
