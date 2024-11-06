@@ -130,4 +130,7 @@ return {
       }
     end,
   },
+  {
+    "ashinkarov/nvim-agda",
+  },
 }

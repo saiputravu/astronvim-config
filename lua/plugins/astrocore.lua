@@ -84,6 +84,22 @@ return {
           desc = "Get type information LSP",
         },
 
+        -- Running files
+        ["<Leader>rr"] = {
+          function()
+            local case = {
+              ["rust"] = function() vim.api.nvim_command "TermExec cmd='cargo run'" end,
+            }
+
+            if case[vim.bo.filetype] then
+              case[vim.bo.filetype]()
+            else
+              print("Don't know how to build extension: ", vim.bo.filetype)
+            end
+          end,
+          desc = "Build and run program",
+        },
+
         -- Tabs
         ["<Leader>w"] = { "<C-w>", desc = "Window management mode" },
         ["<Leader>m"] = { name = "Tab Shortcuts" },
