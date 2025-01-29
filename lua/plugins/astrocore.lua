@@ -130,6 +130,16 @@ return {
           end,
           desc = "Toggle column marker for 81",
         },
+        [",,,c"] = {
+          function()
+            if vim.wo.colorcolumn == "" then
+              vim.wo.colorcolumn = "80"
+            else
+              vim.wo.colorcolumn = ""
+            end
+          end,
+          desc = "Toggle column marker for 80",
+        },
         [",,c"] = {
           function()
             if vim.wo.colorcolumn == "" then

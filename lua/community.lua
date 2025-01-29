@@ -15,4 +15,7 @@ return {
   { import = "astrocommunity.motion.leap-nvim" },
   { import = "astrocommunity.pack.cpp" },
   { import = "astrocommunity.pack.rust" },
+  { import = "astrocommunity.pack.ocaml" },
+  { import = "astrocommunity.colorscheme.gruvbox-baby" },
+  { import = "astrocommunity.recipes.vscode" },
 }
