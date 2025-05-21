@@ -12,7 +12,7 @@ return {
   opts = {
     -- Configure core features of AstroNvim
     features = {
-      large_buf = { size = 1024 * 256, lines = 10000 }, -- set global limits for large files for disabling features like treesitter
+      large_buf = { size = 1024 * 256 * 2, lines = 20000 }, -- set global limits for large files for disabling features like treesitter
       autopairs = true, -- enable autopairs at start
       cmp = true, -- enable completion at start
       diagnostics_mode = 3, -- diagnostic mode on start (0 = off, 1 = no signs/virtual text, 2 = no virtual text, 3 = on)
@@ -29,10 +29,11 @@ return {
       opt = { -- vim.opt.<key>
         relativenumber = true, -- sets vim.opt.relativenumber
         number = true, -- sets vim.opt.number
-        spell = false, -- sets vim.opt.spell
+        spell = true, -- sets vim.opt.spell
+        spelllang = "en_gb", -- sets vim.opt.spell
         signcolumn = "yes", -- sets vim.opt.signcolumn to yes
         wrap = true, -- sets vim.opt.wrap
-        scrolloff = 50, -- sets vim.opt.scrolloff
+        scrolloff = 15, -- sets vim.opt.scrolloff
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)
@@ -71,6 +72,7 @@ return {
           function() require("Comment.api").toggle.linewise.count(vim.v.count > 0 and vim.v.count or 1) end,
           desc = "Toggle comment",
         },
+        ["<C-e>"] = { "<C-a>", desc = "increment" },
         ["<C-c><C-t>"] = {
           function() vim.lsp.buf.hover() end,
           desc = "Get type information LSP",
@@ -109,6 +111,9 @@ return {
         ["<Leader>mp"] = { ":tabprevious<cr>", desc = "Tab prev" },
         ["<Leader>ml"] = { ":tabs<cr>", desc = "Tab list" },
 
+        -- Spelling
+        ["z="] = { ":Telescope spell_suggest<cr>", desc = "Spelling suggestions" },
+
         -- neogit
         [",g"] = { name = "Neogit Shortcuts" },
         [",gl"] = { ":Neogit log<cr>", desc = "Neogit log" },
@@ -123,22 +128,22 @@ return {
         [",c"] = {
           function()
             if vim.wo.colorcolumn == "" then
-              vim.wo.colorcolumn = "81"
+              vim.wo.colorcolumn = "100"
             else
               vim.wo.colorcolumn = ""
             end
           end,
-          desc = "Toggle column marker for 81",
+          desc = "Toggle column marker for 100",
         },
         [",,,c"] = {
           function()
             if vim.wo.colorcolumn == "" then
-              vim.wo.colorcolumn = "80"
+              vim.wo.colorcolumn = "79"
             else
               vim.wo.colorcolumn = ""
             end
           end,
-          desc = "Toggle column marker for 80",
+          desc = "Toggle column marker for 79",
         },
         [",,c"] = {
           function()
