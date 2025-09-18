@@ -17,10 +17,13 @@ return {
   { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.pack.ocaml" },
   { import = "astrocommunity.pack.go" },
+  { import = "astrocommunity.pack.nix" },
   { import = "astrocommunity.pack.python" },
   { import = "astrocommunity.pack.cmake" },
+  { import = "astrocommunity.pack.toml" },
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.colorscheme.gruvbox-baby" },
   { import = "astrocommunity.recipes.vscode" },
   { import = "astrocommunity.markdown-and-latex.vimtex" },
+  { import = "astrocommunity.color.transparent-nvim" },
 }

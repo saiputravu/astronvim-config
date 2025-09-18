@@ -34,6 +34,7 @@ return {
         signcolumn = "yes", -- sets vim.opt.signcolumn to yes
         wrap = true, -- sets vim.opt.wrap
         scrolloff = 15, -- sets vim.opt.scrolloff
+        conceallevel = 1,
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)

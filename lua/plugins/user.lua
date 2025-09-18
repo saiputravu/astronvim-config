@@ -11,6 +11,8 @@ return {
 
   -- == Examples of Adding Plugins ==
 
+  { "arturgoms/moonbow.nvim" },
+
   {
     "stevearc/conform.nvim",
     config = function() require("conform").setup() end,
