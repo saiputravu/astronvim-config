@@ -103,6 +103,9 @@ return {
           desc = "Build and run program",
         },
 
+        -- Jumping
+        ["<Leader>j"] = { function() require("telescope.builtin").jumplist{} end, desc = "Jump list"},
+
         -- Tabs
         ["<Leader>w"] = { "<C-w>", desc = "Window management mode" },
         ["<Leader>m"] = { name = "Tab Shortcuts" },
